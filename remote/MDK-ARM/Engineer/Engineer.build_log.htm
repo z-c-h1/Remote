@@ -1,0 +1,297 @@
+<html>
+<body>
+<pre>
+<h1>礦ision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: μVision V5.36.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: a john, a, LIC=585FJ-UCEGJ-PCVJ8-3HEFW-XKRD5-IHBTZ
+ 
+Tool Versions:
+Toolchain:       MDK-ARM Plus  Version: 5.36.0.0
+Toolchain Path:  D:\Keil_v5_MDK\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.36.0.0
+Dialog DLL:      DCM.DLL V1.17.3.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.9.0
+Dialog DLL:      TCM.DLL V1.53.0.0
+ 
+<h2>Project:</h2>
+C:\Users\john\OneDrive\Desktop\Engineer\MDK-ARM\Engineer.uvprojx
+Project File Date:  03/27/2026
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\Keil_v5_MDK\ARM\ARMCC\Bin'
+Rebuild target 'Engineer'
+assembling startup_stm32f407xx.s...
+compiling stm32f4xx_hal_pcd.c...
+compiling usart.c...
+compiling tim.c...
+compiling dma.c...
+compiling stm32f4xx_it.c...
+compiling stm32f4xx_hal_tim_ex.c...
+compiling stm32f4xx_hal_msp.c...
+compiling can.c...
+compiling stm32f4xx_hal_timebase_tim.c...
+compiling stm32f4xx_hal_pcd_ex.c...
+compiling stm32f4xx_ll_usb.c...
+compiling spi.c...
+compiling freertos.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+../APPLICATION/Test.h(5): warning:  #1295-D: Deprecated declaration all_init_Task - give arg types
+  void all_init_Task();
+../APPLICATION/Test.h(6): warning:  #1295-D: Deprecated declaration all_cmd_Task - give arg types
+  void all_cmd_Task();
+../Core/Src/freertos.c: 4 warnings, 0 errors
+compiling main.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+../APPLICATION/Test.h(5): warning:  #1295-D: Deprecated declaration all_init_Task - give arg types
+  void all_init_Task();
+../APPLICATION/Test.h(6): warning:  #1295-D: Deprecated declaration all_cmd_Task - give arg types
+  void all_cmd_Task();
+../Core/Src/main.c: 4 warnings, 0 errors
+compiling gpio.c...
+compiling stm32f4xx_hal_tim.c...
+compiling stm32f4xx_hal_rcc_ex.c...
+compiling stm32f4xx_hal_rcc.c...
+compiling stm32f4xx_hal_flash.c...
+compiling stm32f4xx_hal_flash_ex.c...
+compiling stm32f4xx_hal_dma.c...
+compiling stm32f4xx_hal_exti.c...
+compiling stm32f4xx_hal_flash_ramfunc.c...
+compiling stm32f4xx_hal_can.c...
+compiling stm32f4xx_hal_pwr_ex.c...
+compiling stm32f4xx_hal_gpio.c...
+compiling stm32f4xx_hal_cortex.c...
+compiling stm32f4xx_hal.c...
+compiling stm32f4xx_hal_pwr.c...
+compiling stm32f4xx_hal_dma_ex.c...
+compiling stm32f4xx_hal_uart.c...
+compiling stm32f4xx_hal_spi.c...
+compiling system_stm32f4xx.c...
+compiling kalman_filter.c...
+compiling bsp_can.c...
+compiling bsp_usart.c...
+compiling DJI_motor.c...
+compiling QuaternionEKF.c...
+compiling motor_task.c...
+compiling controller.c...
+..\MODULE\algorithm\controller.c(20): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+      pid->ITerm = pid->Ki * ((pid->Err + pid->Last_Err) / 2.0) * pid->dt;
+..\MODULE\algorithm\controller.c: 1 warning, 0 errors
+compiling ramp_contorller.c...
+compiling daemon.c...
+compiling bsp_dwt.c...
+compiling croutine.c...
+compiling event_groups.c...
+compiling BMI088Middleware.c...
+compiling remote.c...
+compiling BMI088driver.c...
+compiling list.c...
+compiling timers.c...
+compiling queue.c...
+compiling stream_buffer.c...
+compiling dmmotor.c...
+..\MODULE\motor\DMmotor\dmmotor.c(12): warning:  #550-D: variable "dm_task_handle"  was set but never used
+  static osThreadId dm_task_handle[DM_MOTOR_CNT];
+..\MODULE\motor\DMmotor\dmmotor.c: 1 warning, 0 errors
+compiling tasks.c...
+compiling heap_4.c...
+compiling cmsis_os.c...
+compiling port.c...
+compiling ins_task.c...
+compiling user_lib.c...
+compiling relay.c...
+..\MODULE\relay\relay.c(37): warning:  #1-D: last line of file ends without a newline
+  }
+..\MODULE\relay\relay.c(4): warning:  #177-D: variable "relay_instances"  was declared but never referenced
+  static Relay_Instance *relay_instances[RELAY_MAX_NUM];
+..\MODULE\relay\relay.c(5): warning:  #177-D: variable "idx"  was declared but never referenced
+  static uint8_t idx; // 鐢ㄤ簬璁板綍褰撳墠娉ㄥ唽鐨刣aemon鏁伴噺
+..\MODULE\relay\relay.c: 3 warnings, 0 errors
+compiling usb.c...
+compiling arm.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\APPLICATION\arm\arm.c: 2 warnings, 0 errors
+compiling robot_cmd.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\APPLICATION\cmd\robot_cmd.c: 2 warnings, 0 errors
+compiling nac.c...
+nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+nac.c: 2 warnings, 0 errors
+compiling usbd_conf.c...
+compiling Test.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\APPLICATION\Test.h(5): warning:  #1295-D: Deprecated declaration all_init_Task - give arg types
+  void all_init_Task();
+..\APPLICATION\Test.h(6): warning:  #1295-D: Deprecated declaration all_cmd_Task - give arg types
+  void all_cmd_Task();
+..\APPLICATION\Test.c: 4 warnings, 0 errors
+compiling usbd_desc.c...
+compiling shoot.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\APPLICATION\shoot\shoot.c(44): warning:  #188-D: enumerated type mixed with another type
+          .Improve           = PID_Trapezoid_Intergral | PID_DerivativeFilter | PID_DerivativeFilter | PID_Derivative_On_Measurement | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\shoot\shoot.c(62): warning:  #188-D: enumerated type mixed with another type
+  								.Improve= PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\shoot\shoot.c(79): warning:  #188-D: enumerated type mixed with another type
+              .close_loop_type       = CURRENT_LOOP | SPEED_LOOP  ,
+..\APPLICATION\shoot\shoot.c(107): warning:  #188-D: enumerated type mixed with another type
+                  .Improve           = PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement | PID_DerivativeFilter | PID_ErrorHandle,
+..\APPLICATION\shoot\shoot.c(118): warning:  #188-D: enumerated type mixed with another type
+  							.Improve       = PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\shoot\shoot.c(137): warning:  #188-D: enumerated type mixed with another type
+  					.close_loop_type       = CURRENT_LOOP | SPEED_LOOP |ANGLE_LOOP,
+..\APPLICATION\shoot\shoot.c(198): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Kp  = (motor->motor_controller.speed_PID.Kp < gains_pid.Kp)? motor->motor_controller.speed_PID.Kp*0.9+gains_pid.Kp*0.1 : gains_pid.Kp;
+..\APPLICATION\shoot\shoot.c(198): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Kp  = (motor->motor_controller.speed_PID.Kp < gains_pid.Kp)? motor->motor_controller.speed_PID.Kp*0.9+gains_pid.Kp*0.1 : gains_pid.Kp;
+..\APPLICATION\shoot\shoot.c(199): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Ki =(motor->motor_controller.speed_PID.Ki < gains_pid.Ki)? motor->motor_controller.speed_PID.Ki*0.9+gains_pid.Ki*0.1:gains_pid.Ki;
+..\APPLICATION\shoot\shoot.c(199): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Ki =(motor->motor_controller.speed_PID.Ki < gains_pid.Ki)? motor->motor_controller.speed_PID.Ki*0.9+gains_pid.Ki*0.1:gains_pid.Ki;
+..\APPLICATION\shoot\shoot.c(200): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Kd =(motor->motor_controller.speed_PID.Kd < gains_pid.Kd)?motor->motor_controller.speed_PID.Kd*0.9+gains_pid.Kd*0.1:gains_pid.Kd;
+..\APPLICATION\shoot\shoot.c(200): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  	motor->motor_controller.speed_PID.Kd =(motor->motor_controller.speed_PID.Kd < gains_pid.Kd)?motor->motor_controller.speed_PID.Kd*0.9+gains_pid.Kd*0.1:gains_pid.Kd;
+..\APPLICATION\shoot\shoot.c(203): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		motor->motor_controller.speed_PID.Kp = (motor->motor_controller.speed_PID.Kp >4)     ? (motor->motor_controller.speed_PID.Kp  -  0.1* gains_pid.Kp)/0.9 : 4;
+..\APPLICATION\shoot\shoot.c(204): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		motor->motor_controller.speed_PID.Ki = (motor->motor_controller.speed_PID.Ki >0.025) ? (motor->motor_controller.speed_PID.Ki  -  0.1* gains_pid.Ki)/0.9 : 0.025;
+..\APPLICATION\shoot\shoot.c(204): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		motor->motor_controller.speed_PID.Ki = (motor->motor_controller.speed_PID.Ki >0.025) ? (motor->motor_controller.speed_PID.Ki  -  0.1* gains_pid.Ki)/0.9 : 0.025;
+..\APPLICATION\shoot\shoot.c(205): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		motor->motor_controller.speed_PID.Kd = (motor->motor_controller.speed_PID.Kd >0.02)  ? (motor->motor_controller.speed_PID.Kd  -  0.1* gains_pid.Kd)/0.9 : 0.0;	
+..\APPLICATION\shoot\shoot.c(205): warning:  #1035-D: single-precision operand implicitly converted to double-precision
+  		motor->motor_controller.speed_PID.Kd = (motor->motor_controller.speed_PID.Kd >0.02)  ? (motor->motor_controller.speed_PID.Kd  -  0.1* gains_pid.Kd)/0.9 : 0.0;	
+..\APPLICATION\shoot\shoot.c(234): warning:  #177-D: function "ShootangleInit"  was declared but never referenced
+  static void ShootangleInit(){
+..\APPLICATION\shoot\shoot.c(13): warning:  #550-D: variable "motor_3508_4"  was set but never used
+  static DJIMotor_Instance *motor_3508_1, *motor_3508_2, *motor_3508_3,*motor_3508_4;
+..\APPLICATION\shoot\shoot.c(14): warning:  #177-D: variable "totalangle_1"  was declared but never referenced
+  static float totalangle_1 = 0;
+..\APPLICATION\shoot\shoot.c(17): warning:  #177-D: variable "is_init"  was declared but never referenced
+  static int8_t is_init = 0;
+..\APPLICATION\shoot\shoot.c(18): warning:  #177-D: variable "angle"  was declared but never referenced
+  static float angle = 100;
+..\APPLICATION\shoot\shoot.c(20): warning:  #177-D: variable "Ang"  was declared but never referenced
+  static float Ang,Vec,control = 0 ;
+..\APPLICATION\shoot\shoot.c(20): warning:  #177-D: variable "control"  was declared but never referenced
+  static float Ang,Vec,control = 0 ;
+..\APPLICATION\shoot\shoot.c(218): warning:  #177-D: function "MinmizeRotation"  was declared but never referenced
+  static void MinmizeRotation(int *angle, uint16_t *last_angle, float *speed)
+..\APPLICATION\shoot\shoot.c: 27 warnings, 0 errors
+compiling usbd_core.c...
+compiling chassis.c...
+../APPLICATION/nac.h(107): warning:  #1295-D: Deprecated declaration NacSend - give arg types
+  void NacSend();
+../APPLICATION/nac.h(117): warning:  #1-D: last line of file ends without a newline
+  #endif
+..\APPLICATION\chassis\chassis.c(35): warning:  #188-D: enumerated type mixed with another type
+                  .Improve       = PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\chassis\chassis.c(43): warning:  #188-D: enumerated type mixed with another type
+                  .Improve       = PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\chassis\chassis.c(51): warning:  #188-D: enumerated type mixed with another type
+              .close_loop_type       = CURRENT_LOOP | SPEED_LOOP,
+..\APPLICATION\chassis\chassis.c(84): warning:  #188-D: enumerated type mixed with another type
+                  .Improve           = PID_Trapezoid_Intergral | PID_Integral_Limit | PID_Derivative_On_Measurement | PID_DerivativeFilter | PID_ChangingIntegrationRate,
+..\APPLICATION\chassis\chassis.c(94): warning:  #188-D: enumerated type mixed with another type
+                  .Improve       = PID_Integral_Limit | PID_Derivative_On_Measurement | PID_ChangingIntegrationRate | PID_OutputFilter,
+..\APPLICATION\chassis\chassis.c(125): warning:  #188-D: enumerated type mixed with another type
+              .close_loop_type       = SPEED_LOOP | ANGLE_LOOP,
+..\APPLICATION\chassis\chassis.c(146): warning:  #188-D: enumerated type mixed with another type
+          .Improve           = PID_Trapezoid_Intergral | PID_DerivativeFilter | PID_DerivativeFilter | PID_Derivative_On_Measurement | PID_Integral_Limit | PID_Derivative_On_Measurement,
+..\APPLICATION\chassis\chassis.c(75): warning:  #177-D: variable "chassis_motor_steering_config"  was declared but never referenced
+      Motor_Init_Config_s chassis_motor_steering_config = {
+..\APPLICATION\chassis\chassis.c(12): warning:  #177-D: variable "chassis_lf"  was declared but never referenced
+  static DJIMotor_Instance *chassis_lf, *chassis_lb, *chassis_rf, *chassis_rb;
+..\APPLICATION\chassis\chassis.c(12): warning:  #177-D: variable "chassis_lb"  was declared but never referenced
+  static DJIMotor_Instance *chassis_lf, *chassis_lb, *chassis_rf, *chassis_rb;
+..\APPLICATION\chassis\chassis.c(12): warning:  #177-D: variable "chassis_rf"  was declared but never referenced
+  static DJIMotor_Instance *chassis_lf, *chassis_lb, *chassis_rf, *chassis_rb;
+..\APPLICATION\chassis\chassis.c(12): warning:  #177-D: variable "chassis_rb"  was declared but never referenced
+  static DJIMotor_Instance *chassis_lf, *chassis_lb, *chassis_rf, *chassis_rb;
+..\APPLICATION\chassis\chassis.c(15): warning:  #177-D: variable "motor_steering_lf"  was declared but never referenced
+  static DJIMotor_Instance *motor_steering_lf, *motor_steering_rf, *motor_steering_lb, *motor_steering_rb; // 6020电机 
+..\APPLICATION\chassis\chassis.c(15): warning:  #177-D: variable "motor_steering_rf"  was declared but never referenced
+  static DJIMotor_Instance *motor_steering_lf, *motor_steering_rf, *motor_steering_lb, *motor_steering_rb; // 6020电机 
+..\APPLICATION\chassis\chassis.c(15): warning:  #177-D: variable "motor_steering_lb"  was declared but never referenced
+  static DJIMotor_Instance *motor_steering_lf, *motor_steering_rf, *motor_steering_lb, *motor_steering_rb; // 6020电机 
+..\APPLICATION\chassis\chassis.c(15): warning:  #177-D: variable "motor_steering_rb"  was declared but never referenced
+  static DJIMotor_Instance *motor_steering_lf, *motor_steering_rf, *motor_steering_lb, *motor_steering_rb; // 6020电机 
+..\APPLICATION\chassis\chassis.c(17): warning:  #177-D: variable "vt_lf"  was declared but never referenced
+  static float vt_lf, vt_rf, vt_lb, vt_rb; // 底盘速度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(17): warning:  #177-D: variable "vt_rf"  was declared but never referenced
+  static float vt_lf, vt_rf, vt_lb, vt_rb; // 底盘速度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(17): warning:  #177-D: variable "vt_lb"  was declared but never referenced
+  static float vt_lf, vt_rf, vt_lb, vt_rb; // 底盘速度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(17): warning:  #177-D: variable "vt_rb"  was declared but never referenced
+  static float vt_lf, vt_rf, vt_lb, vt_rb; // 底盘速度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(18): warning:  #177-D: variable "at_lf"  was declared but never referenced
+  static float at_lf, at_rf, at_lb, at_rb; // 底盘的角度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(18): warning:  #177-D: variable "at_rf"  was declared but never referenced
+  static float at_lf, at_rf, at_lb, at_rb; // 底盘的角度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(18): warning:  #177-D: variable "at_lb"  was declared but never referenced
+  static float at_lf, at_rf, at_lb, at_rb; // 底盘的角度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c(18): warning:  #177-D: variable "at_rb"  was declared but never referenced
+  static float at_lf, at_rf, at_lb, at_rb; // 底盘的角度解算后的临时输出,待进行限幅
+..\APPLICATION\chassis\chassis.c: 26 warnings, 0 errors
+compiling usbd_ctlreq.c...
+compiling usbd_cdc_if.c...
+compiling usb_device.c...
+compiling usbd_cdc.c...
+compiling usbd_ioreq.c...
+linking...
+Program Size: Code=61640 RO-data=3584 RW-data=1452 ZI-data=97044  
+FromELF: creating hex file...
+"Engineer\Engineer.axf" - 0 Error(s), 76 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                https://www.keil.com/pack/Keil.STM32F4xx_DFP.3.1.1.pack
+                Keil.STM32F4xx_DFP.3.1.1
+                STMicroelectronics STM32F4 Series Device Support
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Engineer
+  D:\Keil_v5_MDK\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+Build Time Elapsed:  00:00:37
+</pre>
+</body>
+</html>
