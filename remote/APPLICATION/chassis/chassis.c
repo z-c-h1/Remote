@@ -11,7 +11,7 @@
 
 static DJIMotor_Instance *chassis_lf, *chassis_lb, *chassis_rf, *chassis_rb;
 RC_ctrl_t *rc_cmd;
-static DJIMotor_Instance *motor_lf, *motor_rf, *motor_lb, *motor_rb;                                     // left right forward back
+static DJIMotor_Instance *motor_lf, *motor_rf, *motor_lb, *motor_rb, *motor_1, *motor_2;                                     // left right forward back
 static DJIMotor_Instance *motor_steering_lf, *motor_steering_rf, *motor_steering_lb, *motor_steering_rb; // 6020电机 
 static PID_Instance chassis_follow_pid;  // 底盘跟随PID
 static float vt_lf, vt_rf, vt_lb, vt_rb; // 底盘速度解算后的临时输出,待进行限幅
@@ -55,21 +55,21 @@ void ChassisInit()
     //  @todo: 当前还没有设置电机的正反转,仍然需要手动添加reference的正负号,需要电机module的支持,待修改.
     chassis_motor_config.can_init_config.tx_id                             = 4;
     chassis_motor_config.controller_setting_init_config.motor_reverse_flag = MOTOR_DIRECTION_NORMAL;
-    motor_lf                                                               = DJIMotorInit(&chassis_motor_config);
+    motor_lb                                                               = DJIMotorInit(&chassis_motor_config);
 
-    chassis_motor_config.can_init_config.tx_id                             = 3.;
-    chassis_motor_config.controller_setting_init_config.motor_reverse_flag = MOTOR_DIRECTION_NORMAL;
-    motor_rf                                                               = DJIMotorInit(&chassis_motor_config);
-
+    chassis_motor_config.can_init_config.tx_id                             = 3;
+    chassis_motor_config.controller_setting_init_config.motor_reverse_flag = MOTOR_DIRECTION_REVERSE;
+    motor_rb                                                               = DJIMotorInit(&chassis_motor_config);
+	
 	chassis_motor_config.can_init_config.can_handle = &hcan2;
     chassis_motor_config.can_init_config.tx_id                             = 1;
     chassis_motor_config.controller_setting_init_config.motor_reverse_flag = MOTOR_DIRECTION_NORMAL;
-    motor_lb                                                               = DJIMotorInit(&chassis_motor_config);
+    motor_lf                                                               = DJIMotorInit(&chassis_motor_config);
 
     chassis_motor_config.can_init_config.tx_id                             = 2;
-		chassis_motor_config.controller_param_init_config.speed_PID.Kp         =2;
+//		chassis_motor_config.controller_param_init_config.speed_PID.Kp         =2;
     chassis_motor_config.controller_setting_init_config.motor_reverse_flag = MOTOR_DIRECTION_REVERSE;
-    motor_rb                                                               = DJIMotorInit(&chassis_motor_config);
+    motor_rf                                                               = DJIMotorInit(&chassis_motor_config);
 
     // 6020电机初始化
     Motor_Init_Config_s chassis_motor_steering_config = {
@@ -180,9 +180,9 @@ void ChassisTask()
     }
 
     // 读取遥控器摇杆原始数据
-    int16_t l_x = rc_cmd->rc.rocker_l_;  
-    int16_t l_y = rc_cmd->rc.rocker_l1;  
-    int16_t r_x = rc_cmd->rc.rocker_r_;  
+    int16_t l_x = rc_cmd->rc.rocker_l_;  //左水平
+    int16_t l_y = rc_cmd->rc.rocker_l1;  //左竖直
+    int16_t r_x = rc_cmd->rc.rocker_r_;  //右水平
 
     // 过滤摇杆中间位置的微小抖动
     if(abs(l_x) < 10) l_x = 0;
@@ -195,7 +195,9 @@ void ChassisTask()
     float vx = l_y * MAX_LINEAR_SPEED / 660.0f; 
     float vy = l_x * MAX_LINEAR_SPEED / 660.0f; 
     float vw = r_x * MAX_ROTATE_SPEED / 660.0f; 
-
+	
+	
+	//lf,rf,lb,rb = chassis(x,y,yaw)
     // 麦轮运动学解算
     float speed_lf = vx - vy - vw; 
     float speed_rf = vx + vy + vw; 
@@ -203,9 +205,9 @@ void ChassisTask()
     float speed_rb = vx - vy + vw; 
 
     
-    DJIMotorSetRef(motor_lf, speed_lf
-	);
+    DJIMotorSetRef(motor_lf, speed_lf);
     DJIMotorSetRef(motor_rf, speed_rf);
     DJIMotorSetRef(motor_lb, speed_lb);
     DJIMotorSetRef(motor_rb, speed_rb);
+
 }
